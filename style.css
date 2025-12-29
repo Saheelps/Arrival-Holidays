@@ -443,13 +443,28 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    header {
+        position: absolute;
+        width: 100%;
+        background: transparent;
+        z-index: 1000;
+    }
+
+    .hamburger {
+        color: white;
+    }
+
+    nav {
+        height: 70px;
+        /* Compact height */
+    }
+
     .nav-links {
         display: none;
         /* Add JS for toggle later */
         position: absolute;
-        position: absolute;
-        top: 160px;
-        /* Matched to new header height */
+        top: 70px;
+        /* Match new header height */
         left: 0;
         transform: none;
         /* Reset desktop centering */

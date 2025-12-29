@@ -75,9 +75,21 @@
 
         @media(max-width: 768px) {
             header {
-                position: relative;
-                /* On mobile, relative positioning might be safer if menu expands */
-                background-color: var(--primary-color);
+                position: absolute;
+                background-color: transparent;
+                height: auto;
+            }
+
+            .hamburger {
+                color: white;
+            }
+
+            nav {
+                height: 70px;
+            }
+
+            .nav-links {
+                top: 70px;
             }
         }
     </style>
@@ -185,6 +197,15 @@
     </footer>
 
     <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
         // Scroll Animation Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
