@@ -51,6 +51,22 @@
             /* Shadow to separate content from video */
         }
     </style>
+    <style>
+        .packages-container {
+            max-width: 85%;
+            margin: 0 auto 3rem auto;
+            border-radius: 20px;
+            padding: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .packages-container {
+                max-width: 95%;
+                padding: 1.5rem 0;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -81,8 +97,7 @@
         </div>
     </section>
 
-    <section class="section-padding"
-        style="max-width: 85%; margin: 0 auto 3rem auto; border-radius: 20px; padding: 3rem 0;">
+    <section class="section-padding packages-container">
         <div class="container">
             <div class="package-grid">
                 <!-- Package 1 -->
