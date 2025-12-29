@@ -61,6 +61,21 @@
                 padding: 1.5rem;
             }
         }
+
+
+        /* Header Styles */
+        header {
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 80px;
+            /* Reduced from global 160px to move items up */
+        }
     </style>
 </head>
 
@@ -69,88 +84,40 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo"><img src="photos/1.png" alt="Arrival Holidays">ARRIVAL <span style="color:var(--secondary-color)">HOLIDAYS</span></a>
                 <div class="hamburger"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="booking.html" class="active btn">Book Now</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+
+
     <section class="hero"
-        style="min-height: 40vh; height: 40vh; background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
-        <div class="hero-content">
+        style="min-height: 40vh; height: 40vh; position: relative; display: flex; align-items: center; justify-content: center;">
+        <video autoplay muted loop playsinline class="hero-video"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; object-fit: cover; z-index: -2;">
+            <source src="photos/video4.mp4" type="video/mp4">
+        </video>
+        <div style="position: fixed; inset: 0; height: 100vh; background; z-index: -1;"></div>
+        <div class="hero-content" style="position: relative; z-index: 1; text-align: center; margin-top: 10rem;">
             <h1>Book Your Dream Vacation</h1>
-            <p>One step closer to your adventure.</p>
         </div>
     </section>
 
-    <section class="section-padding container">
-        <div class="booking-container">
-            <h2 style="text-align: left; margin-bottom: 1rem;">Booking Form</h2>
-            <p style="margin-bottom: 2rem;">Please fill out the form below to request a booking. Our agents will contact
-                you within 24 hours.</p>
 
-            <form action="#" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control" placeholder="+1 234 567 890" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="package">Select Package</label>
-                        <select id="package" class="form-control" required>
-                            <option value="" disabled selected>Select a tour...</option>
-                            <option value="swiss">Swiss Alps Escape</option>
-                            <option value="maldives">Maldives Retreat</option>
-                            <option value="bali">Bali Adventure</option>
-                            <option value="italy">Italian Dream</option>
-                            <option value="thailand">Tropical Thailand</option>
-                            <option value="dubai">Dazzling Dubai</option>
-                            <option value="custom">Custom / Other</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="date">Preferred Travel Date</label>
-                        <input type="date" id="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="guests">Number of Guests</label>
-                        <input type="number" id="guests" class="form-control" min="1" value="2" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="message">Special Requests / Comments</label>
-                    <textarea id="message" class="form-control" rows="4"
-                        placeholder="Any dietary restrictions, specific interests, etc."></textarea>
-                </div>
-
-                <button type="submit" class="btn" style="width: 100%;">Submit Booking Request</button>
-            </form>
+        <div class="booking-container" style="text-align: center; padding: 0;">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeMtcSCbiO0umcAXBzwx0CdfkjPXcVnC9udhYqLnsoV_6U2pA/viewform?embedded=true"
+                width="100%" height="963" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </section>
 
-    <footer>
+    <footer style="background-color: #000000; position: relative; z-index: 1;">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -169,9 +136,10 @@
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Lane, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
-                        <li><i class="fas fa-envelope"></i> info@arrivalholidays.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara,
+                            Kochi, Kerala-682020</li>
+
+                        <li><i class="fas fa-envelope"></i> holidaysarrival@gmail.com</li>
                     </ul>
                 </div>
             </div>
@@ -181,17 +149,18 @@
         </div>
     </footer>
 
+
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
 
-        // Simple form submission handler
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your booking request! We will contact you shortly.');
-            e.target.reset();
-        });
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+
     </script>
 </body>
 

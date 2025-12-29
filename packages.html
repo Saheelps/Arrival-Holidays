@@ -10,6 +10,46 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Fixed Video Background */
+        .hero-video,
+        .hero-overlay {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            /* Prevent interference */
+        }
+
+        .hero-video {
+            z-index: -5;
+        }
+
+        .hero-overlay {
+            z-index: -4;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Content Styling */
+        .hero {
+            background: transparent !important;
+            min-height: 60vh !important;
+            /* Give more space to see video initially */
+        }
+
+        /* Glassmorphism Effect for Content */
+        .section-padding,
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+            /* Shadow to separate content from video */
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +57,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo"><img src="photos/1.png" alt="Arrival Holidays">ARRIVAL <span style="color:var(--secondary-color)">HOLIDAYS</span></a>
+
                 <div class="hamburger"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -29,118 +69,124 @@
         </div>
     </header>
 
-    <section class="hero"
-        style="min-height: 50vh; height: 50vh; background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+    <section class="hero" style="min-height: 50vh; height: 50vh;">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="photos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Our Tour Packages</h1>
-            <p>Curated itineraries for every traveler.</p>
+            <h1>Tour Packages</h1>
         </div>
     </section>
 
-    <section class="section-padding container">
-        <div class="package-grid">
-            <!-- Package 1 -->
-            <div class="package-card">
-                <span class="package-price">$1200</span>
-                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Switzerland" class="package-img">
-                <div class="package-info">
-                    <h3>Swiss Alps Escape</h3>
-                    <p>Experience the magic of the Alps. Visit Geneva, Zermatt, and Zurich in this 7-day tour.</p>
-                    <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
-                        <li><i class="fas fa-clock"></i> 7 Days / 6 Nights</li>
-                        <li><i class="fas fa-utensils"></i> Breakfast & Dinner</li>
-                        <li><i class="fas fa-hotel"></i> 4-Star Hotels</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
+    <section class="section-padding"
+        style="max-width: 85%; margin: 0 auto 3rem auto; border-radius: 20px; padding: 3rem 0;">
+        <div class="container">
+            <div class="package-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+    
+                    <img src="photos/7.jpg" alt=" Munnar Thekkady Alleppey" class="package-img">
+                    <div class="package-info">
+                        <h3> Munnar Thekkady Alleppey</h3>
+                        <p>misty tea gardens, rich wildlife and spice plantations, followed by peaceful backwaters and
+                            houseboat experiences..</p>
+                        <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <li><i class="fas fa-clock"></i> 5 Days, 4 Nights</li>
+                            <li><i class="fas fa-utensils"></i> Breakfast & Dinner</li>
+                            <li><i class="fas fa-hotel"></i>Hotels (options)</li>
+                        </ul>
+                        <a href="booking.html" class="btn">Book Now</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Package 2 -->
-            <div class="package-card">
-                <span class="package-price">$900</span>
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Maldives" class="package-img">
-                <div class="package-info">
-                    <h3>Maldives Retreat</h3>
-                    <p>Relax in paradise. Includes sea-plane transfer and all-inclusive water villa stay.</p>
-                    <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
-                        <li><i class="fas fa-clock"></i> 5 Days / 4 Nights</li>
-                        <li><i class="fas fa-cocktail"></i> All Inclusive</li>
-                        <li><i class="fas fa-water"></i> Water Villa</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
+                <!-- Package 2 -->
+                <div class="package-card">
+
+                    <img src="photos/6.jpg" alt="Munnar Alleppey" class="package-img">
+                    <div class="package-info">
+                        <h3>Munnar Alleppey</h3>
+                        <p>cool hill stations with scenic tea plantations, followed by calm backwaters and relaxing
+                            houseboat cruises..</p>
+                        <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <li><i class="fas fa-clock"></i> 4 Days, 3 Nights</li>
+                            <li><i class="fas fa-utensils"></i> Breakfast & Dinner</li>
+                            <li><i class="fas fa-hotel"></i>Hotels (options)</li>
+                        </ul>
+                        <a href="booking.html" class="btn">Book Now</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Package 3 -->
-            <div class="package-card">
-                <span class="package-price">$1500</span>
-                <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Bali" class="package-img">
-                <div class="package-info">
-                    <h3>Bali Adventure</h3>
-                    <p>Explore the best of Bali: Ubud, Seminyak, waterfalls, and iconic temples.</p>
-                    <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
-                        <li><i class="fas fa-clock"></i> 10 Days / 9 Nights</li>
-                        <li><i class="fas fa-bus"></i> Private Transfers</li>
-                        <li><i class="fas fa-spa"></i> 1 Spa Session</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
+                <!-- Package 3 -->
+                <div class="package-card">
+
+                    <img src="photos/5.jpg" alt="Wayanad" class="package-img">
+                    <div class="package-info">
+                        <h3>Wayanad</h3>
+                        <p>Wayanad is a serene hill destination known for its lush forests, misty mountains, waterfalls,
+                            wildlife, and rich tribal culture—perfect for nature and adventure lovers..</p>
+                        <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <li><i class="fas fa-clock"></i> 3 Days, 2 Nights</li>
+                            <li><i class="fas fa-utensils"></i> Breakfast & Dinner</li>
+                            <li><i class="fas fa-hotel"></i>Hotels (options)</li>
+                        </ul>
+                        <a href="booking.html" class="btn">Book Now</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Package 4 -->
-            <div class="package-card">
-                <span class="package-price">$2200</span>
-                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Venice" class="package-img">
-                <div class="package-info">
-                    <h3>Italian Dream</h3>
-                    <p>Rome, Florence, and Venice. A cultural and historical journey through Italy.</p>
-                    <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
-                        <li><i class="fas fa-clock"></i> 9 Days / 8 Nights</li>
-                        <li><i class="fas fa-ticket-alt"></i> Museum Entry</li>
-                        <li><i class="fas fa-train"></i> High-speed Train</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
+                <!-- Package 4 -->
+                <div class="package-card">
+            
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Venice" class="package-img">
+                    <div class="package-info">
+                        <h3>coming soon</h3>
+                        <p>coming soon.</p>
+                        <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <li><i class="fas fa-clock"></i> 9 Days / 8 Nights</li>
+                            <li><i class="fas fa-ticket-alt"></i> Museum Entry</li>
+                            <li><i class="fas fa-train"></i> High-speed Train</li>
+                        </ul>
+                        <a href="booking.html" class="btn">Book Now</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Package 5 -->
-            <div class="package-card">
-                <span class="package-price">$1800</span>
-                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Thailand" class="package-img">
-                <div class="package-info">
-                    <h3>Tropical Thailand</h3>
-                    <p>Bangkok, Phuket, and Krabi. Island hopping and street food tours included.</p>
-                    <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
-                        <li><i class="fas fa-clock"></i> 8 Days / 7 Nights</li>
-                        <li><i class="fas fa-utensils"></i> Street Food Tour</li>
-                        <li><i class="fas fa-ship"></i> Island Boat Trip</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
+                <!-- Package 5 -->
+                <div class="package-card">
+
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Thailand" class="package-img">
+                    <div class="package-info">
+                        <h3>coming soon</h3>
+                        <p>coming soon.</p>
+                        <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <li><i class="fas fa-clock"></i> 8 Days / 7 Nights</li>
+                            <li><i class="fas fa-utensils"></i> Street Food Tour</li>
+                            <li><i class="fas fa-ship"></i> Island Boat Trip</li>
+                        </ul>
+                        <a href="booking.html" class="btn">Book Now</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Package 6 -->
-            <div class="package-card">
-                <span class="package-price">$2500</span>
-                <img src="https://images.unsplash.com/photo-1542259681-dadcd731560b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Dubai" class="package-img">
-                <div class="package-info">
-                    <h3>Dazzling Dubai</h3>
-                    <p>Experience the luxury of Dubai. Desert Safari, Burj Khalifa, and Marina Dinner Cruise.</p>
-                    <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
-                        <li><i class="fas fa-clock"></i> 6 Days / 5 Nights</li>
-                        <li><i class="fas fa-star"></i> 5-Star Stay</li>
-                        <li><i class="fas fa-car"></i> Private Chauffeur</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
+                <!-- Package 6 -->
+                <div class="package-card">
+
+                    <img src="https://images.unsplash.com/photo-1542259681-dadcd731560b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Dubai" class="package-img">
+                    <div class="package-info">
+                        <h3>coming soon</h3>
+                        <p>coming soon.</p>
+                        <ul style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <li><i class="fas fa-clock"></i> 6 Days / 5 Nights</li>
+                            <li><i class="fas fa-star"></i> 5-Star Stay</li>
+                            <li><i class="fas fa-car"></i> Private Chauffeur</li>
+                        </ul>
+                        <a href="booking.html" class="btn">Book Now</a>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
@@ -163,9 +209,10 @@
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Lane, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
-                        <li><i class="fas fa-envelope"></i> info@arrivalholidays.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara,
+                            Kochi, Kerala-68202
+                
+                        <li><i class="fas fa-envelope"></i>  holidaysarrival@gmail.co
                     </ul>
                 </div>
             </div>

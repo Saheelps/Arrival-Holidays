@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=Cinzel:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for Icons -->
@@ -28,7 +28,7 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active" style="color: white;">Home</a></li>
+                    <li><a href="index.html" class="active" style="color: rgb(255, 255, 255);">Home</a></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -44,8 +44,12 @@
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
-        <a href="contact.html" class="btn btn-outline hero-contact-btn">Contact Us</a>
-        <a href="packages.html" class="btn btn-outline hero-explore-btn">Explore Packages</a>
+        <div class="hero-buttons" style="flex-direction: column; align-items: center;">
+            <a href="packages.html" class="btn btn-outline hero-explore-btn">Explore Packages</a>
+            <p
+                style="font-family: 'Cinzel', serif; font-size: 0.7rem; color: black; margin: 3rem 0 0 0; font-weight: 600; letter-spacing: 8px; text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
+                Arrival is a beginning</p>
+        </div>
     </section>
 
     <!-- Intro / About Snippet -->
@@ -53,8 +57,9 @@
         <div class="features">
             <div class="feature-card">
                 <i class="fas fa-globe-asia feature-icon"></i>
-                <h3>Global Destinations</h3>
-                <p>From the Alps to the Maldives, we cover over 50+ countries with exclusive access.</p>
+                <h3>Explore Kerala</h3>
+                <p>Discover hill stations, wildlife, beaches, and backwaters through thoughtfully designed Kerala tour
+                    packages.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-gem feature-icon"></i>
@@ -76,34 +81,31 @@
             <div class="package-grid">
                 <!-- Package 1 -->
                 <div class="package-card">
-                    <span class="package-price">$1200</span>
-                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Switzerland" class="package-img">
+
+                    <img src="photos/7.jpg" alt=" Munnar Thekkady Alleppey" class="package-img">
                     <div class="package-info">
-                        <h3>Swiss Alps Escape</h3>
-                        <p>7 Days, 6 Nights - Geneva, Zermatt, Zurich.</p>
+                        <h3> Munnar Thekkady Alleppey</h3>
+                        <p>5 Days, 4 Nights</p>
                         <a href="booking.html" class="btn">Book Now</a>
                     </div>
                 </div>
                 <!-- Package 2 -->
                 <div class="package-card">
-                    <span class="package-price">$900</span>
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Maldives" class="package-img">
+
+                    <img src="photos/6.jpg" alt="Munnar Alleppey" class="package-img">
                     <div class="package-info">
-                        <h3>Maldives Retreat</h3>
-                        <p>5 Days, 4 Nights - All Inclusive Water Villa.</p>
+                        <h3>Munnar Alleppey</h3>
+                        <p>4 Days, 3 Nights</p>
                         <a href="booking.html" class="btn">Book Now</a>
                     </div>
                 </div>
                 <!-- Package 3 -->
                 <div class="package-card">
-                    <span class="package-price">$1500</span>
-                    <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Bali" class="package-img">
+
+                    <img src="photos/5.jpg" alt="Wayanad" class="package-img">
                     <div class="package-info">
-                        <h3>Bali Adventure</h3>
-                        <p>10 Days, 9 Nights - Ubud, Seminyak, Nusa Penida.</p>
+                        <h3>Wayanad</h3>
+                        <p>3 Days, 2 Nights</p>
                         <a href="booking.html" class="btn">Book Now</a>
                     </div>
                 </div>
@@ -114,6 +116,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer>
@@ -135,9 +139,10 @@
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Lane, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
-                        <li><i class="fas fa-envelope"></i> info@arrivalholidays.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara,
+                            Kochi, Kerala-682020</li>
+
+                        <li><i class="fas fa-envelope"></i> holidaysarrival@gmail.com</li>
                     </ul>
                 </div>
             </div>

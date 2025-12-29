@@ -11,61 +11,78 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Updated Masonry Style Gallery */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-auto-rows: 250px;
-            gap: 15px;
+            column-count: 3;
+            column-gap: 20px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
+            margin-bottom: 20px;
+            break-inside: avoid;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Ensure images take full width of column */
+            display: block;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
+            height: auto;
+            /* Allow natural height for masonry feel */
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .gallery-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 76, 117, 0.7);
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
             color: #fff;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
             opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 1.5rem;
-            font-weight: bold;
+            transition: opacity 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
 
-        /* Span 2 columns for some items for masonry feel */
-        .gallery-item:nth-child(2n) {
-            grid-column: span 2;
+        @media(max-width: 900px) {
+            .gallery-grid {
+                column-count: 2;
+            }
         }
 
-        @media(max-width: 768px) {
-            .gallery-item:nth-child(2n) {
-                grid-column: span 1;
+        @media(max-width: 600px) {
+            .gallery-grid {
+                column-count: 1;
             }
+        }
+
+        /* Animation Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -75,7 +92,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo"><img src="photos/1.png" alt="Arrival Holidays">ARRIVAL <span style="color:var(--secondary-color)">HOLIDAYS</span></a>
+
                 <div class="hamburger"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -88,55 +105,64 @@
     </header>
 
     <section class="hero"
-        style="min-height: 40vh; height: 40vh; background-image: url('https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
-        <div class="hero-content">
+        style="min-height: 40vh; height: 40vh; position: relative; display: flex; align-items: center; justify-content: center; padding-top: 12rem; overflow: hidden;">
+        <video autoplay muted loop playsinline class="hero-video"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="photos/video3.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay for better text readability -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: -1;">
+        </div>
+
+        <div class="hero-content" style="text-align: center; position: relative; z-index: 1;">
             <h1>Travel Gallery</h1>
-            <p>Moments captured from around the world.</p>
+    
         </div>
     </section>
 
     <section class="section-padding container">
         <div class="gallery-grid">
             <!-- Images -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1504964148243-075f74e94985?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Mountain">
-                <div class="gallery-overlay">Himalayas</div>
+            <div class="gallery-item reveal">
+                <img src="photos/10.jpg"
+                    alt="Munnar">
+                <div class="gallery-overlay">Munnar</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Beach">
-                <div class="gallery-overlay">Bora Bora</div>
+            <div class="gallery-item reveal">
+                <img src=photos/11.jpg
+                    alt="Kovalam Beach">
+                <div class="gallery-overlay">Kovalam Beach</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Landscape">
-                <div class="gallery-overlay">Alps</div>
+            <div class="gallery-item reveal">
+                <img src=photos/12.jpg
+                    alt="Munnar">
+                <div class="gallery-overlay">Munnar</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1528702748617-c64d49f918af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="City">
-                <div class="gallery-overlay">Dubai City</div>
+            <div class="gallery-item reveal">
+                <img src=photos/13.jpg
+                    alt="Thekkady">
+                <div class="gallery-overlay">Thekkady</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1533929736458-ca588d080e81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Forest">
-                <div class="gallery-overlay">Amazon</div>
+            <div class="gallery-item reveal">
+                <img src=photos/20.jpg
+                    alt="Wayanad">
+                <div class="gallery-overlay">Wayanad</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1512453979798-5ea904f8486d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Dubai">
-                <div class="gallery-overlay">Desert Safari</div>
+            <div class="gallery-item reveal">
+                <img src=photos/15.jpg
+                    alt="Thekkady">
+                <div class="gallery-overlay">Thekkady</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/auto/camera/1532/5a1b5b5b5b5b5b5b5b5b5b5b5b5b5b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Paris">
-                <div class="gallery-overlay">Paris</div>
+            <div class="gallery-item reveal">
+                <img src=photos/16.jpg
+                    alt="Alappuzha">
+                <div class="gallery-overlay">Alappuzha</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Beach">
-                <div class="gallery-overlay">Philippines</div>
+            <div class="gallery-item reveal">
+                <img src=photos/17.jpg
+                    alt="Munnar">
+                <div class="gallery-overlay">Munnar</div>
             </div>
         </div>
     </section>
@@ -160,9 +186,10 @@
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Lane, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
-                        <li><i class="fas fa-envelope"></i> info@arrivalholidays.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara,
+                            Kochi, Kerala-682020</li>
+
+                        <li><i class="fas fa-envelope"></i> holidaysarrival@gmail.com</li>
                     </ul>
                 </div>
             </div>
@@ -176,6 +203,19 @@
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+
+        // Scroll Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 

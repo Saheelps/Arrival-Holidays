@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Arrival Holidays</title>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         .contact-wrapper {
             display: grid;
@@ -41,22 +43,12 @@
             flex-shrink: 0;
         }
 
-        .contact-text h4 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
         .map-container {
             width: 100%;
             height: 300px;
-            background-color: #eee;
             margin-top: 2rem;
             border-radius: 10px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
         }
 
         @media(max-width: 768px) {
@@ -64,9 +56,27 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+        }
 
-            .contact-info {
-                padding-right: 0;
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Restored Header Styles */
+        header {
+            background-color: transparent;
+            /* Semi-transparent black for visibility */
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        @media(max-width: 768px) {
+            header {
+                position: relative;
+                /* On mobile, relative positioning might be safer if menu expands */
+                background-color: var(--primary-color);
             }
         }
     </style>
@@ -77,21 +87,28 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo"><img src="photos/1.png" alt="Arrival Holidays">ARRIVAL <span style="color:var(--secondary-color)">HOLIDAYS</span></a>
-                <div class="hamburger"><i class="fas fa-bars"></i></div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <!-- Logo can be added here if needed -->
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html" class="active" style="color: var(--secondary-color);">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero"
-        style="min-height: 40vh; height: 40vh; background-image: url('https://images.unsplash.com/photo-1557456170-0cf4f4d0d362?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
-        <div class="hero-content">
+    <section class="hero-video-container" style="height: 50vh; overflow: hidden; position: relative;">
+        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="photos/video2.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="page-header" style="text-align: center; padding: 4rem 0 2rem;">
+        <div class="container reveal">
             <h1>Get In Touch</h1>
             <p>We're here to help you plan your next adventure.</p>
         </div>
@@ -100,68 +117,61 @@
     <section class="section-padding container">
         <div class="contact-wrapper">
 
-            <!-- Contact Info Side -->
-            <div class="contact-info">
-                <h2 style="text-align: left;">Contact Information</h2>
+            <!-- Contact Info -->
+            <div class="contact-info reveal">
+                <h2>Contact Information</h2>
                 <p>Have specific questions or need help planning a complex itinerary? Reach out to us directly.</p>
 
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="contact-text">
-                        <h4>Our Office</h4>
-                        <p>123 Adventure Blvd, Suite 405<br>Wanderlust City, WC 90210</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                    <div class="contact-text">
-                        <h4>Phone Number</h4>
-                        <p>+1 (555) 123-4567<br>Mon-Fri, 9am - 6pm</p>
+                    <div>
+                        <h4>Office</h4>
+                        <p>1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara, Kochi, Kerala-682020</p>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-text">
-                        <h4>Email Address</h4>
-                        <p>info@arrivalholidays.com<br>support@arrivalholidays.com</p>
+                    <div>
+                        <h4>Email</h4>
+                        <p>holidaysarrival@gmail.com</p>
                     </div>
                 </div>
 
-                <!-- Placeholder Map -->
+                <div class="social-links-container" style="margin-bottom: 2rem;">
+                    <h4>Connect with us</h4>
+                    <div class="social-icons" style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                        <a href="https://wa.me/918606003368" target="_blank" class="social-icon"
+                            style="color: #25D366; font-size: 2.5rem; transition: transform 0.3s;"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/175nmFnhyD/?mibextid=wwXIfr" target="_blank"
+                            class="social-icon"
+                            style="color: #1877F2; font-size: 2.5rem; transition: transform 0.3s;"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/arrivalholidays?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" class="social-icon"
+                            style="color: #E4405F; font-size: 2.5rem; transition: transform 0.3s;"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
                 <div class="map-container">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1628776856000!5m2!1sen!2sus"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        src="https://maps.google.com/maps?q=1st+Floor,+CC+54,+2593-5,+Bose+Nagar,+Kadavanthara,+Kochi,+Kerala-682020&z=15&output=embed"
+                        width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- Contact Form Side -->
-            <div>
-                <div class="booking-container"
-                    style="max-width: 100%; padding: 2rem; margin: 0; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee;">
-                    <h3 style="margin-bottom: 1.5rem;">Send us a message</h3>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label class="form-label">Name</label>
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Subject</label>
-                            <input type="text" class="form-control" placeholder="Inquiry about..." required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="5" placeholder="How can we help?" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+            <!-- Google Form -->
+            <div class="booking-container reveal"
+                style="padding:2rem; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee;">
+                <h3 style="margin-bottom:1.5rem;">Send us a message</h3>
+
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfvjaqbFriGMUEPF33yDba78VUEqdl-eCKMiDOy9BgfAkgIaA/viewform?embedded=true"
+                    width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0">
+                    Loading…
+                </iframe>
             </div>
 
         </div>
@@ -169,45 +179,23 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>Arrival Holidays</h4>
-                    <p>Making your dream vacations a reality since 2010.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="packages.html">Packages</a></li>
-                        <li><a href="booking.html">Booking</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Lane, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
-                        <li><i class="fas fa-envelope"></i> info@arrivalholidays.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Arrival Holidays. All Rights Reserved.
-            </div>
+            <p style="text-align:center;">&copy; 2025 Arrival Holidays. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Your message has been sent!');
-            e.target.reset();
+        // Scroll Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1
         });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 

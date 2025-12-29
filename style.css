@@ -152,7 +152,8 @@ nav {
 }
 
 .logo img {
-    height: 140px; /* Adjust based on navbar height */
+    height: 140px;
+    /* Adjust based on navbar height */
     width: auto;
     /* Margin removed in favor of flex gap */
 }
@@ -201,8 +202,10 @@ nav {
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end; /* Move content to bottom */
-    padding-bottom: 8vh; /* Scale with viewport height */
+    align-items: flex-end;
+    /* Move content to bottom */
+    padding-bottom: 8vh;
+    /* Scale with viewport height */
     justify-content: center;
     text-align: center;
     color: var(--text-light);
@@ -219,39 +222,48 @@ nav {
     z-index: -2;
 }
 
-.hero-contact-btn {
+.hero-buttons {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
-    z-index: 1001; /* Ensure it's above the navbar */
-    font-size: 0.8rem;
-    padding: 8px 20px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    z-index: 1001;
+    width: 100%;
+    justify-content: center;
 }
 
+
+
 .hero-explore-btn {
-    position: absolute;
-    bottom: 15%; /* Position near the bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    z-index: 1001;
-    font-size: 0.75rem;
-    padding: 8px 18px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
+    font-size: 0.8rem;
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
     animation: pulse-zoom 2s infinite ease-in-out;
+    backdrop-filter: blur(5px);
 }
 
 @keyframes pulse-zoom {
-    0%, 100% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-explore-btn:hover {
     animation: none;
-    transform: translateX(-50%) scale(1.15);
-    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
+    background: white;
+    color: var(--primary-color);
+    border-color: white;
     transition: 0.3s;
 }
 
@@ -261,7 +273,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay for text readability */
     z-index: -1;
 }
 
@@ -330,6 +343,8 @@ nav {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .package-card:hover {
@@ -344,6 +359,14 @@ nav {
 
 .package-info {
     padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-info .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .package-price {
@@ -425,9 +448,11 @@ footer {
         /* Add JS for toggle later */
         position: absolute;
         position: absolute;
-        top: 160px; /* Matched to new header height */
+        top: 160px;
+        /* Matched to new header height */
         left: 0;
-        transform: none; /* Reset desktop centering */
+        transform: none;
+        /* Reset desktop centering */
         width: 100%;
         background: white;
         flex-direction: column;
